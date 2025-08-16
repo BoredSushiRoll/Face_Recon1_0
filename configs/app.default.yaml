@@ -14,10 +14,11 @@ detection:
   min_face_px: 100
 
 recognition:
-  embed_model_path: "./data/models/arcface_r100.onnx"
-  detector_model_path: "./data/models/scrfd_500m.onnx"
+  embed_model_path: "./data/models/arcfaceresnet100-8.onnx"
+  detector_model_path: "./data/models/scrfd_500m.onnx"  # unused for now
   metric: "cosine"
-  threshold: 0.45
+  threshold: 0.38
+
 
 
 ui:
