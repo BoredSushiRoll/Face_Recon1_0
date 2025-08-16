@@ -1,0 +1,29 @@
+app:
+  name: FaceGate
+  mode: single_camera
+  log_level: INFO
+
+camera:
+  index: 0              # webcam
+  width: 1280
+  height: 720
+  target_fps: 30
+
+detection:
+  min_conf: 0.6
+  min_face_px: 100
+
+recognition:
+  embed_model_path: "./data/models/arcface_r100.onnx"
+  detector_model_path: "./data/models/scrfd_500m.onnx"
+  metric: "cosine"
+  threshold: 0.45
+
+
+ui:
+  banner_policy: "any_match"   # any face matching 'Rareș' => Authorized
+  show_fps: true
+
+storage:
+  sqlite_path: "./data/embeddings/identities.db"
+  enrollment_dir: "./data/identities/rares"
